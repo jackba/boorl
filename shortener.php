@@ -93,8 +93,8 @@ class Shortener {
 			$short = NumberConverter::fromDecimalToBase($id, 64);
 
 			// Insert the new URL data into the database
-			$result = $this->database->exec("INSERT INTO mapping (id, short_code, long_url)" .
-					" VALUES ($id, '$short', '$url')");
+			$result = $this->database->exec("INSERT INTO mapping (id, short_code, long_url, insert_date)" .
+					" VALUES ($id, '$short', '$url', CURDATE())");
 
 			if ($result) {
 				$this->database->commit();
