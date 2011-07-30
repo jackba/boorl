@@ -13,23 +13,25 @@ class NumberConverter {
 	private static $base = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz+=";
 
 	/**
-	 * Get's the $number character from $base array 
+	 * Get's the $index character from $base array 
 	 * 
-	 * @param number - the position of the character needed
+	 * @param index - the position of the character needed
 	 * @return Returns a character from $base for a given $number 
 	 */
-	private static function getCharacter($number) {
-		return self::$base{$number};
+	private static function getCharacter($index) {
+		return self::$base{$index};
 	}
 
 	/**
 	 * Converts a decimal number to a given base 
 	 * 
 	 * @param number - Number to be converted
-	 * @param toBase - Number base to be converted to
+	 * @param toBase - Number base to be converted to [optional]
+	 * 
+	 * @return String - Converted number 
 	 * @throws Exception
 	 */
-	public static function fromDecimalToBase($number, $toBase){
+	public static function fromDecimalToBase($number, $toBase = 64){
 
 		// Check if the base is greater then the max possible base
 		if ($toBase > strlen(self::$base)) {
@@ -39,10 +41,10 @@ class NumberConverter {
 		$number = intval($number);
 
 		// Set a flag if the number is negative, do a positive conversion then just add the minus sign
-		$negative = false;
+		$isNegative = false;
 		if ($number <= 0) {
-			$negative = true;
-			$number = $number * -1;
+			$isNegative = true;
+			$number = abs($number);
 		}
 
 		$converted = "";
@@ -56,7 +58,7 @@ class NumberConverter {
 		}
 
 		// Add the minus sign if it was negative
-		if ($negative) {
+		if ($isNegative) {
 			$converted = "-" . $converted;
 		}
 		 
