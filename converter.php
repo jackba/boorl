@@ -3,7 +3,7 @@
 /**
  * Class with static methods for converting numbers from decimal to a given base number system
  * 
- * @author Andrija aidvu Vucinic
+ * @author Andrija Vucinic, Marko Andrijasevic
  * @version 1.1
  */
 class NumberConverter {

@@ -6,7 +6,7 @@ include('converter.php');
 /**
  * URL Shortener class
  *
- * @author Andrija aidvu Vucinic
+ * @author Andrija Vucinic
  * @version 1.1
  */
 class Shortener {
