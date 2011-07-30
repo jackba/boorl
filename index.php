@@ -24,16 +24,18 @@ try {
 		exit();
 	} else {
 		// Show a simple form with URL field and a button
-		echo '<html>';
-		echo '<head>';
-			echo '<title>URL Shortener</title>';
-		echo '</head>';
-		echo '<body>';
-			echo '<form name="input" action="" method="post">';
-				echo 'URL: <input type="text" name="url" /> <input type="submit"';
-					echo 'value="Shorten" />';
-			echo '</form>';
 		
+	?>
+		<html>
+		<head>
+			<title>URL Shortener</title>
+		</head>
+		<body>
+			<form name="input" action="" method="post">
+				URL: <input type="text" name="url" /> <input type="submit" value="Shorten" />
+			</form>
+	<? 	
+	
 		$url = $_POST['url'];
 		// Check if form was submitted and add the URL to the database if it doesn't exist,
 		// otherwise return the shortcode of the long_url

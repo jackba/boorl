@@ -90,7 +90,7 @@ class Shortener {
 			}
 
 			// Convert the ID to a new base
-			$short = NumberConverter::fromDecimalToBase($id, 64);
+			$short = NumberConverter::fromDecimalToBase($id);
 
 			// Insert the new URL data into the database
 			$result = $this->database->exec("INSERT INTO mapping (id, short_code, long_url, insert_date)" .
