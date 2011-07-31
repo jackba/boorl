@@ -4,10 +4,9 @@
 include("shortener.php");
 // QR Class
 include("qr.php");
-
 // Instantiate Shortener
 $shortener = new Shortener();
-
+		
 // Extract the key
 $key = split("/", $_SERVER['REQUEST_URI']);
 $key = $key[sizeof($key) - 1];

@@ -20,7 +20,7 @@ class Shortener {
 
 	// Connect to database on construction
 	public function __construct() {
-		$this->database = new PDO('mysql:host=localhost;dbname=shortener', 'root', '');
+		$this->database = new PDO('mysql:host=localhost;dbname=shortener', 'root', 'shortener');
 	}
 
 	/**
