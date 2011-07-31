@@ -17,10 +17,22 @@ class Shortener {
 	private $keyRegex = "/[^A-Za-z0-9\+\=]/";
 	// URL Regular Expression
 	private $urlRegex = '/^(https?|ftp):\/\/[A-Za-z0-9_\-]+(\.[A-Za-z0-9_\-]+)+(\/|(\/[A-Za-z0-9_\-\?\+\=\&\.]+)+)?\/?$/';
+	
+	private $memcache;
 
 	// Connect to database on construction
 	public function __construct() {
 		$this->database = new PDO('mysql:host=localhost;dbname=shortener', 'root', 'shortener');
+		
+		$MEMCACHE_SERVERS = array(
+    		"127.0.0.1",
+		);
+		
+		$memcache = new Memcache();
+		foreach($MEMCACHE_SERVERS as $server){
+    		$memcache->addServer($server);
+		}
+		
 	}
 
 	/**
@@ -35,16 +47,25 @@ class Shortener {
 			throw new Exception("Key contains chracters that are not allowed!");
 		}
 
-		// Search for the key in the database
-		$result = $this->database->query("SELECT long_url FROM mapping WHERE BINARY short_code = '" . $key . "'")->fetchAll();
-
-		if (sizeof($result) == 1) {
-			$url = $result[0]['long_url'];
-		} else {
-			throw new Exception("Key invalid!");
+		
+		//check if the url is already cached
+		$url = $memcache->get($key);
+		
+		//if not fetch from database
+		if($url === false){
+			// Search for the key in the database
+			$result = $this->database->query("SELECT long_url FROM mapping WHERE BINARY short_code = '" . $key . "'")->fetchAll();		
+			
+			if (sizeof($result) == 1) {
+				$url = $result[0]['long_url'];
+				$memcache->set($key, $url, false, 36000);
+			} else {
+				throw new Exception("Key invalid!");
+			}
 		}
-
+		
 		return $url;
+		
 	}
 
 	/**
