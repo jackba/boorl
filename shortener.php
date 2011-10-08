@@ -94,7 +94,7 @@ class Shortener {
 
 			// Insert the new URL data into the database
 			$result = $this->database->exec("INSERT INTO mapping (id, short_code, long_url, insert_date)" .
-					" VALUES ($id, '$short', '$url', CURDATE())");
+					" VALUES ($id, '$short', '$url', NOW())");
 
 			if ($result) {
 				$this->database->commit();
