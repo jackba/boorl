@@ -16,11 +16,11 @@ class Shortener {
 	// Short Code Regular Expression
 	private $keyRegex = "/[^A-Za-z0-9\+\=]/";
 	// URL Regular Expression
-	private $urlRegex = '/^(https?|ftp):\/\/[A-Za-z0-9_\-]+(\.[A-Za-z0-9_\-]+)+(\/|(\/[A-Za-z0-9_\-\?\+\=\&\.]+)+)?\/?$/';
+	private $urlRegex = '/^(https?|ftp):\/\/[A-Za-z0-9_\-]+(\.[A-Za-z0-9_\-]+)+(\/|(\/[A-Za-z0-9_\-\?\+\=\&\.\#]+)+)?\/?$/';
 
 	// Connect to database on construction
 	public function __construct() {
-		$this->database = new PDO('mysql:host=localhost;dbname=shortener', 'root', 'shortener');
+		$this->database = new PDO('mysql:host=localhost;dbname=shortener', 'root', 'root');
 	}
 
 	/**
