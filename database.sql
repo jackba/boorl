@@ -1,6 +1,6 @@
-CREATE DATABASE IF NOT EXISTS `shortener`;
+CREATE DATABASE IF NOT EXISTS `##dbname##`;
 
-CREATE  TABLE IF NOT EXISTS `shortener`.`mapping` (
+CREATE  TABLE IF NOT EXISTS `##dbname##`.`mapping` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `short_code` VARCHAR(10) NOT NULL ,
   `long_url` TEXT NOT NULL ,

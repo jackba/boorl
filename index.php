@@ -1,5 +1,12 @@
 <?php
 
+// Configurations
+include('config.php');
+if (INSTALL != 1) {
+	include('install.php');
+	exit();
+}
+
 // URL Shortener class
 include("shortener.php");
 // QR Class
