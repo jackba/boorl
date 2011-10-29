@@ -1,7 +1,5 @@
 <?php
 
-include('config.php');
-
 if (INSTALL != 1) {
 	
 	$apache_modules = apache_get_modules();
@@ -36,7 +34,7 @@ if (INSTALL != 1) {
 			try {
 				$dbh = new PDO("mysql:host=$host;", $username, $password);
 				echo '<br /> Connected to database. ';
-				$dbSQL = file_get_contents('database.sql');
+				$dbSQL = file_get_contents('include/config/database.sql');
 				$dbSQL = str_replace('##dbname##', $database, $dbSQL);
 				$dbSQL = split(';', $dbSQL);
 				$dbSQL = array_slice($dbSQL, 0, sizeof($dbSQL) - 1);
@@ -46,13 +44,13 @@ if (INSTALL != 1) {
 				$dbh->exec("USE $database");
 				echo '<br /> Database successfully created. ';
 				
-				$config = file_get_contents('config.php');
+				$config = file_get_contents('include/config/config.php');
 				$config = str_replace('##0##', 1, $config);
 				$config = str_replace('##1##', $host, $config);
 				$config = str_replace('##2##', $database, $config);
 				$config = str_replace('##3##', $username, $config);
 				$config = str_replace('##4##', $password, $config);
-				if (!file_put_contents('config.php', $config)) {
+				if (!file_put_contents('include/config/config.php', $config)) {
 					throw new Exception('Could not write configuration file.');	
 				}
 				echo '<br /> Installation successful. '; 
@@ -75,10 +73,11 @@ if (INSTALL != 1) {
 	} else {
 		echo "<br/>Install all the needed extensions/modules.<br/>";
 	}
-} else {
-	include('../../index.php');
 }
 
+/**
+ * Check if all the parameters are given
+ */
 function validate() {
 	if (strlen($_POST['host']) > 0 &&
 		strlen($_POST['database']) > 0 &&
@@ -89,4 +88,5 @@ function validate() {
 		return false;
 	}
 }
+
 ?>

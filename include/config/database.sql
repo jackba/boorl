@@ -1,4 +1,7 @@
-CREATE DATABASE IF NOT EXISTS `##dbname##`;
+CREATE SCHEMA IF NOT EXISTS `##dbname##` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+USE `##dbname##` ;
+
+DROP TABLE IF EXISTS `##dbname##`.`mapping` ;
 
 CREATE  TABLE IF NOT EXISTS `##dbname##`.`mapping` (
   `id` INT NOT NULL AUTO_INCREMENT ,
@@ -11,3 +14,29 @@ CREATE  TABLE IF NOT EXISTS `##dbname##`.`mapping` (
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_general_ci;
+
+DROP TABLE IF EXISTS `##dbname##`.`statistics` ;
+
+CREATE  TABLE IF NOT EXISTS `##dbname##`.`statistics` (
+  `mapping_short_code` VARCHAR(10) NOT NULL ,
+  `click_time` DATETIME NOT NULL ,
+  `ip` VARCHAR(20) NOT NULL ,
+  `operating_system` VARCHAR(20) NULL ,
+  `browser` VARCHAR(20) NULL ,
+  `country` VARCHAR(30) NULL ,
+  `referer` VARCHAR(100) NULL ,
+  INDEX `mapping_short_code` (`mapping_short_code` ASC) ,
+  INDEX `click_time` (`click_time` ASC) ,
+  INDEX `operating_system` (`operating_system` ASC) ,
+  INDEX `browser` (`browser` ASC) ,
+  INDEX `country` (`country` ASC) ,
+  INDEX `referer` (`referer` ASC) ,
+  CONSTRAINT `mapping_short_code`
+    FOREIGN KEY (`mapping_short_code` )
+    REFERENCES `##dbname##`.`mapping` (`short_code` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = MyISAM
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
+

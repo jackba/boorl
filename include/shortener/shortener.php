@@ -1,7 +1,7 @@
 <?php
 
 // Number converter
-include('include/shortener/converter.php');
+include('converter.php');
 
 /**
  * URL Shortener class
@@ -20,7 +20,7 @@ class Shortener {
 
 	// Connect to database on construction
 	public function __construct() {
-		$this->database = new PDO('mysql:host=' . HOST . ';dbname=' . DATABASE, USERNAME, PASSWORD);
+		$this->database = Database::getInstance();
 	}
 
 	/**

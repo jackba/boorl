@@ -1,9 +1,7 @@
 <?php
 
-// Configurations
-include('../config/config.php');
 // Info class containing user information
-include('info.php');
+include('include/log/info.php');
 
 /**
  * Class for logging shortlink statistics
@@ -18,7 +16,7 @@ class Log {
 	
 	// Connect to database on construction
 	public function __construct() {
-		$this->database = new PDO('mysql:host=' . HOST . ';dbname=' . DATABASE, USERNAME, PASSWORD);
+		$this->database = Database::getInstance();
 	}
 	
 	/**

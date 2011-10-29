@@ -2,10 +2,19 @@
 
 // Configurations
 include('include/config/config.php');
+if (INSTALL != 1) {
+        include('include/config/install.php');
+        exit();
+}
+
+// Singleton
+include("include/config/database.php");
 // URL Shortener class
 include("include/shortener/shortener.php");
 // QR Class
 include("include/shortener/qr.php");
+// QR Class
+include("include/log/log.php");
 // Instantiate Shortener
 $shortener = new Shortener();
 		
@@ -22,6 +31,8 @@ try {
 		// Redirect
 		header('HTTP/1.1 301 Moved Permanently');
 		header('Location: ' . $url);
+		$log = new Log();
+		$log->log($key);
 		exit();
 	} else {
 		// Show a simple form with URL field and a button
