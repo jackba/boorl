@@ -1,7 +1,7 @@
 <?php
 
 // Info class containing user information
-include('include/log/info.php');
+include('info.php');
 
 /**
  * Class for logging shortlink statistics

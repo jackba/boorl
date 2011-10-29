@@ -7,13 +7,13 @@ if (INSTALL != 1) {
         exit();
 }
 
-// Singleton
+// Database Singleton
 include("include/config/database.php");
-// URL Shortener class
+// URL Shortener Class
 include("include/shortener/shortener.php");
 // QR Class
 include("include/shortener/qr.php");
-// QR Class
+// Log Class
 include("include/log/log.php");
 // Instantiate Shortener
 $shortener = new Shortener();
