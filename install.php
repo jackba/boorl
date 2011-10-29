@@ -1,6 +1,6 @@
 <?php
 
-include('config.php');
+include('include/config/config.php');
 
 if (INSTALL != 1) {
 	
