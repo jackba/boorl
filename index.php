@@ -2,11 +2,6 @@
 
 // Configurations
 include('include/config/config.php');
-if (INSTALL != 1) {
-	include('install.php');
-	exit();
-}
-
 // URL Shortener class
 include("include/shortener/shortener.php");
 // QR Class

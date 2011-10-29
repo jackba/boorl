@@ -1,6 +1,6 @@
 <?php
 
-include('include/config/config.php');
+include('config.php');
 
 if (INSTALL != 1) {
 	
@@ -76,7 +76,7 @@ if (INSTALL != 1) {
 		echo "<br/>Install all the needed extensions/modules.<br/>";
 	}
 } else {
-	include('index.php');
+	include('../../index.php');
 }
 
 function validate() {
