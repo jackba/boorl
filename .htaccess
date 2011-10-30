@@ -1,4 +1,11 @@
 <IfModule mod_rewrite.c>
 RewriteEngine on
-RewriteRule ^.*$ index.php
+RewriteCond %{REQUEST_URI} /[0-9a-zA-Z]+\+$
+RewriteRule ^(.*)\+$ stats.php?key=$1 [L]
+RewriteCond %{REQUEST_URI} /[0-9a-zA-Z]+\=$
+RewriteRule ^(.*)\=$ where.php?key=$1 [L]
+RewriteCond %{REQUEST_URI} /[0-9a-zA-Z]+$
+RewriteRule ^(.*)$ redirect.php?key=$1 [L]
+RewriteCond %{REQUEST_URI} ^$
+RewriteRule ^(.*)$ index.php [L]
 </IfModule>

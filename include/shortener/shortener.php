@@ -32,7 +32,7 @@ class Shortener {
 	public function getLongURL($key) {
 		// Validate the key to contain only characters used in the mapping
 		if (preg_match($this->keyRegex, $key)) {
-			throw new Exception("Key contains chracters that are not allowed!");
+			throw new Exception("Key contains characters that are not allowed!");
 		}
 
 		// Search for the key in the database
@@ -90,7 +90,7 @@ class Shortener {
 			}
 
 			// Convert the ID to a new base
-			$short = NumberConverter::fromDecimalToBase($id);
+			$short = NumberConverter::fromDecimalToBase($id, 62);
 
 			// Insert the new URL data into the database
 			$result = $this->database->exec("INSERT INTO mapping (id, short_code, long_url, insert_date)" .
