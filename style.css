@@ -1,0 +1,126 @@
+*
+{
+	margin:0;
+}
+html
+{
+	height:100%;
+}
+body
+{
+	background-image:url('images/bg.jpg');
+	background-repeat:repeat;
+	height:100%;
+}
+div.center
+{
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+}
+div.container
+{
+	min-height:100%;
+}
+div.header
+{
+	background-image:url('images/header-repeat-no-shadow.png');
+	background-repeat:repeat-x;
+	height:140px;
+	padding-top:12px;
+}
+div.headerShadow
+{
+	background-image:url('images/header-shadow.png');
+	background-repeat:no-repeat;
+	height:40px;
+	width:915px;
+}
+div.logo
+{
+	background-image:url('images/logo.png');
+	background-repeat:no-repeat;
+	height:124px;
+	width:285px;
+}
+div.footerShadow
+{
+	position: relative;
+	margin-top: -151px;
+	clear:both;
+	background-image:url('images/footer-shadow.png');
+	background-repeat:no-repeat;
+	height:151px;
+	width:915px;
+}
+div.footer
+{
+	position: relative;
+	margin-top: -109px;
+	clear:both;
+	background-image:url('images/footer-repeat-no-shadow.png');
+	background-repeat:repeat-x;
+	height:109px;
+}
+div.main
+{
+	width:600px;
+	http://reference.sitepoint.com/css/text-align
+}
+div.longbubble
+{
+	height:140px;
+	width:250px;
+	margin-left:-40px;
+	background-image:url('images/long.png');
+	background-repeat:no-repeat;
+}
+div.shortbubble
+{
+	display:inline;
+	float:left;
+	height:130px;
+	width:250px;
+	margin-left:420px;
+	margin-top:-65px;
+	background-image:url('images/boorl.png');
+	background-repeat:no-repeat;
+}
+div.search
+{
+	background-repeat:no-repeat;
+	display:inline;
+	height:100px;
+	width:290px;
+	float:left;
+}
+div.searchlong
+{
+	background-image:url('images/long-box.png');
+}
+div.searchshort
+{
+	background-image:url('images/short-box.png');
+	font-size: 24px;
+	font-family: "Arial", sans-serif;
+	text-align:left;
+	padding-left:20px;
+	font-weight: bold;
+}
+input.url
+{	
+	margin-top:16px;
+	background: none;
+	border: none;
+	width:230px;
+	font-family: "Arial", sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+}
+.submit
+{	
+	display:inline;
+	float:left;
+	margin-top:-80px;
+	width:290px;
+}
