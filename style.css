@@ -18,15 +18,20 @@ div.center
 	margin-right:auto;
 	text-align:center;
 }
+div.inline
+{
+	display:inline;
+}
 div.container
 {
+	position:relative;
 	min-height:100%;
 }
 div.header
 {
 	background-image:url('images/header-repeat-no-shadow.png');
 	background-repeat:repeat-x;
-	height:140px;
+	height:110px;
 	padding-top:12px;
 }
 div.headerShadow
@@ -40,68 +45,88 @@ div.logo
 {
 	background-image:url('images/logo.png');
 	background-repeat:no-repeat;
-	height:124px;
-	width:285px;
+	height:100px;
+	width:237px;
 }
 div.footerShadow
 {
 	position: relative;
-	margin-top: -151px;
+	margin-top: -112px;
 	clear:both;
 	background-image:url('images/footer-shadow.png');
 	background-repeat:no-repeat;
-	height:151px;
+	height:112px;
 	width:915px;
 }
 div.footer
 {
 	position: relative;
-	margin-top: -109px;
+	margin-top: -70px;
 	clear:both;
 	background-image:url('images/footer-repeat-no-shadow.png');
 	background-repeat:repeat-x;
-	height:109px;
+	height:70px;
 }
 div.main
 {
-	width:600px;
-	http://reference.sitepoint.com/css/text-align
+	position:absolute;
+	height:230px;
+	margin-top:-115px;
+	top:50%;
+	width:1000px;
+	margin-left:-500px;
+	left:50%;
 }
-div.longbubble
+div.longBubble
 {
+	float:left;
 	height:140px;
 	width:250px;
-	margin-left:-40px;
 	background-image:url('images/long.png');
 	background-repeat:no-repeat;
 }
-div.shortbubble
+div.shortBubble
 {
-	display:inline;
-	float:left;
-	height:130px;
+	float:right;
+	height:140px;
 	width:250px;
-	margin-left:420px;
-	margin-top:-65px;
 	background-image:url('images/boorl.png');
 	background-repeat:no-repeat;
+}
+div.explanation
+{
+	float:left;
+	margin-left:130px;
+	height:130px;
+	width:250px;
+	background-image:url('images/how-to.png');
+	background-repeat:no-repeat;
+}
+
+div.form
+{
+	float:left;
+	width:100%;
+}
+div.formContainer
+{
+	width:890px;
 }
 div.search
 {
 	background-repeat:no-repeat;
-	display:inline;
 	height:100px;
 	width:290px;
 	float:left;
 }
-div.searchlong
+div.searchLong
 {
 	background-image:url('images/long-box.png');
 }
-div.searchshort
+div.searchShort
 {
 	background-image:url('images/short-box.png');
-	font-size: 24px;
+	font-size: 20px;
 	font-family: "Arial", sans-serif;
 	text-align:left;
 	padding-left:20px;
@@ -109,18 +134,17 @@ div.searchshort
 }
 input.url
 {	
-	margin-top:16px;
+	margin-top:20px;
 	background: none;
 	border: none;
-	width:230px;
 	font-family: "Arial", sans-serif;
-	font-size: 24px;
+	font-size: 20px;
 	font-weight: bold;
 }
 .submit
 {	
-	display:inline;
-	float:left;
-	margin-top:-80px;
-	width:290px;
+	background:url(images/arrow.png) no-repeat left top;
+	width:105px;
+	height:80px;
+	border:none;
 }

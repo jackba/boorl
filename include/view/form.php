@@ -1,9 +1,23 @@
-	<form name="input" action="" method="post">
-	<div class="longbubble"></div>
-		<div class="search searchlong"> <input class="url" type="text" name="url" id="url" value="Long URL" /> </div>
-		<div class="search searchshort"> <input class="url" type="text" name="short" id="short" value="BooRL" readonly/> </div>
-	<div>
-		<div class="shortbubble"></div>
-		<input class="submit" type="submit" value="Submit"/>
+<form method="post">
+	<div class="inline">
+		<div class="longBubble">
+		</div>
+		<div class="explanation">
+		</div>
+		<div class="shortBubble">
+		</div>
 	</div>
-	</form>
+	<div class="form center">
+		<div class="formContainer center">
+			<div class="search searchLong">
+				<input class="url" type="text" name="url" id="url" value="" />
+			</div>
+			<div class="search">
+				<input class="submit" type="submit" value=""/>
+			</div>
+			<div class="search searchShort">
+				<input class="url" type="text" name="short" id="short" value="" readonly/>
+			</div>
+		</div>
+	</div>
+</form>
