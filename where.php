@@ -15,9 +15,9 @@
 		$shortener = new Shortener();
 		// Get Long URL for the given key
 		$url = $shortener->getLongURL($key);
-		$lead = "<a href=\"$key\">$url</a>";
+		$short = "<a class=\"highlight\" href=\"$key\">$url</a>";
 	} catch (Exception $e) {
-		$lead = 'Nowhere...';
+		$short = "<span class=\"highlight\">Nowhere...</span>";
 	}
 	
 	include('include/view/where.php');

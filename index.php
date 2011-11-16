@@ -18,28 +18,22 @@ $shortener = new Shortener();
 
 try {
 	include('include/view/header.php'); 	
-
-	include('include/view/form.php');
 	
 	$url = $_POST['url'];
 	// Check if form was submitted and add the URL to the database if it doesn't exist,
 	// otherwise return the shortcode of the long_url
-	if (isset($url) && strlen($url) > 0) {
+	
+	$submitted = isset($url) && strlen($url) > 0;
+	
+	if ($submitted) {
 		// Get domain
 		$domain = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 		// Create new short code or get old if it already exists
-		$shortCodeURL = $domain . $shortener->insertNewURL($url);
-		
-		include('include/view/select.php');
-		/*
-		// Show the shortcode
-		echo $shortCodeURL . '<br />';
-		// Get QR Image for the generated code
-		$qr = QR::getQRforURL($shortCodeURL, 200);
-		// Show image
-		echo '<img src="' . $qr . '" alt="QR" />';
-		*/
+		$short = $shortener->insertNewURL($url);
+		$shortCodeURL = $domain . $short;
 	}
+	
+	include('include/view/form.php');
 
 } catch (Exception $e) {
 	// Catch exceptions if any arise and show a message
