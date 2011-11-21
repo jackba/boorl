@@ -31,6 +31,8 @@ if (INSTALL != 1) {
 			$database = $_POST['database'];
 			$username = $_POST['username'];
 			$password = $_POST['password'];
+			$domain = $_POST['domain'];
+			$gaCode = $_POST['gaCode'];
 			try {
 				$dbh = new PDO("mysql:host=$host;", $username, $password);
 				echo '<br /> Connected to database. ';
@@ -50,6 +52,8 @@ if (INSTALL != 1) {
 				$config = str_replace('##2##', $database, $config);
 				$config = str_replace('##3##', $username, $config);
 				$config = str_replace('##4##', $password, $config);
+				$config = str_replace('##5##', $domain, $config);
+				$config = str_replace('##6##', $gaCode, $config);
 				if (!file_put_contents('include/config/config.php', $config)) {
 					throw new Exception('Could not write configuration file.');	
 				}
@@ -66,6 +70,8 @@ if (INSTALL != 1) {
 			Database: <input type="text" name="database" /> <br />
 			Username: <input type="text" name="username" /> <br />
 			Password: <input type="text" name="password" /> <br />
+			Domain (without www, Optional): <input type="text" name="domain" /> <br />
+			Google Analytics Code (Optional): <input type="text" name="gaCode" /> <br />
 			<input type="submit" value="Submit" /> <br />
 		</form>
 		<?php 
