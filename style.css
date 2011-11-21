@@ -33,6 +33,7 @@ div.container
 {
 	position:relative;
 	min-height:100%;
+	height:600px;
 }
 div.header
 {
@@ -157,11 +158,46 @@ input.url
 }
 div.info
 {
+	width:700px;
 	font-family: 'Webfont';
 	font-weight: bold;
 	font-size: 17px;
 }
-.highlight
+
+.tableContainer
 {
-	font-size: 30px;
+	width:695px;
+	font-family: 'Webfont';
+}
+.tableContainer div
+{
+	width:320px;
+	height:120px;
+	float:left;
+	margin:1% 2%;
+}
+.tableContainer table
+{
+	width:300px;
+	float:left;
+	border-collapse:collapse;
+}
+.tableContainer th
+{
+	border-bottom:1px solid #000000;
+	text-align:left;
+	padding-left:15px;
+}
+.tableContainer td
+{
+	width:70%;
+	text-align:left;
+	border-bottom:1px solid #999;
+	padding-left:10px;
+	padding-right:10px;
+}
+.tableContainer td.number
+{
+	width:30%;
+	text-align:right;
 }

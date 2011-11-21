@@ -19,6 +19,10 @@ Class Statistics {
 		$this->browser = $database->query("SELECT browser, count(*) FROM statistics WHERE mapping_short_code = '" . $this->key . "' GROUP BY browser")->fetchAll();
 		$this->referer = $database->query("SELECT referer, count(*) FROM statistics WHERE mapping_short_code = '" . $this->key . "' GROUP BY referer")->fetchAll();
 		
+		if ($this->country == false || $this->operatingSystem == false || $this->browser == false || $this->referer == false) {
+			throw new Exception("Failed to get database data.");
+		}
+		
 	}
 	
 	public function getCountries() {

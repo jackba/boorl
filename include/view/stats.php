@@ -1,24 +1,29 @@
-<div>
-	<?php
-		foreach ($statistics->getBrowsers() as $browser) {
-			echo $browser[0] . " " . $browser[1]. "<br/>";
-		}
-	?>
-	<?php
-		foreach ($statistics->getOperatingSystems() as $os) {
-			echo $os[0] . " " . $os[1]. "<br/>";
-		}
-	?>
-</div>
-<div>
-	<?php
-		foreach ($statistics->getCountries() as $country) {
-			echo $country[0] . " " . $country[1]. "<br/>";
-		}
-	?>
-	<?php
-		foreach ($statistics->getReferers() as $referer) {
-			echo $referer[0] . " " . $referer[1]. "<br/>";
-		}
+<?php 
+	function showTable($array, $header) {
+		?>
+					<div>
+						<table class="statistics">
+							<tr>
+								<th><?php echo $header?></th>
+								<th></th>
+							</tr>
+							<?php foreach ($array as $instance) { ?>
+							<tr>
+								<td><?php echo $instance[0]?></td>
+								<td class="number"><?php echo $instance[1]?></td>
+							</tr>
+							<?php } ?>
+						</table>
+					</div>
+					<?php 
+	}
+?>
+
+<div class="tableContainer center">
+	<?php 
+		showTable($statistics->getBrowsers(), "Browsers");
+		showTable($statistics->getOperatingSystems(), "Operating Systems");
+		showTable($statistics->getCountries(), "Countries");
+		showTable($statistics->getReferers(), "Referers");
 	?>
 </div>
