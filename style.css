@@ -158,12 +158,14 @@ input.url
 }
 div.info
 {
-	width:700px;
 	font-family: 'Webfont';
 	font-weight: bold;
 	font-size: 17px;
 }
-
+.highlight
+{
+	font-size: 30px;
+}
 .tableContainer
 {
 	width:695px;
