@@ -5,14 +5,14 @@
 	 */
 
 	// Is BooRL installed, or it's the first time running it
-	define("INSTALL", "1");
-	// Database host
-	define("HOST", "localhost");
-	// Database name
-	define("DATABASE", "shortener");
-	// Database username
-	define("USERNAME", "root");
-	// Database password
-	define("PASSWORD", "root");
+	define("INSTALL", "##0##");
+    // Database host
+    define("HOST", "##1##");
+    // Database name
+    define("DATABASE", "##2##");
+    // Database username
+    define("USERNAME", "##3##");
+    // Database password
+	define("PASSWORD", "##4##");
 
 ?>
