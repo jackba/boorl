@@ -1,4 +1,5 @@
-@font-face {
+@font-face
+{
     font-family: 'Webfont';
     src: url('font/Cicle_Fina-webfont.eot');
     src: url('font/Cicle_Fina-webfont.eot?#iefix') format('embedded-opentype'),
@@ -49,12 +50,9 @@ div.headerShadow
 	height:40px;
 	width:915px;
 }
-div.logo
+img.logo
 {
-	background-image:url('images/logo.png');
-	background-repeat:no-repeat;
-	height:100px;
-	width:237px;
+	margin-top:10px;
 }
 div.footerShadow
 {
@@ -124,47 +122,57 @@ div.formElement
 {
 	background-repeat:no-repeat;
 	height:100px;
-	width:290px;
+	width:120px;
 	float:left;
 }
 div.searchLong
 {
 	background-image:url('images/long-box.png');
+	width:380px;
+	margin-top:13px;
 }
 div.searchShort
 {
 	background-image:url('images/short-box.png');
-	font-size: 20px;
-	text-align:left;
-	padding-left:20px;
-	font-weight: bold;
+	width:380px;
+	margin-top:13px;
 }
 input.url
 {	
-	margin-top:20px;
+	margin-top:10px;
+	margin-left:-10px;
 	background: none;
 	border: none;
 	font-family: 'Webfont';
 	font-size: 20px;
 	font-weight: bold;
-	width:240px;
+	width:355px;
 }
 .submit
 {	
 	background:url(images/arrow.png) no-repeat left top;
-	width:105px;
+	width:92px;
 	height:80px;
 	border:none;
 }
+.submit:hover
+{
+	background:url(images/arrow-hover.png) no-repeat left top;
+}
+.submit:active
+{
+	background:url(images/arrow-active.png) no-repeat left top;
+}
 div.info
 {
+	width:700px;
 	font-family: 'Webfont';
 	font-weight: bold;
 	font-size: 17px;
 }
 .highlight
 {
-	font-size: 30px;
+        font-size: 30px;
 }
 .tableContainer
 {
@@ -174,7 +182,6 @@ div.info
 .tableContainer div
 {
 	width:320px;
-	height:120px;
 	float:left;
 	margin:1% 2%;
 }

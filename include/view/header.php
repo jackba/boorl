@@ -31,7 +31,10 @@
 	<body>
 		<div class="container center">
 			<div class="header">
-				<div class="logo center">
+				<div class="center">
+					<a href="http://<?php echo $_SERVER['HTTP_HOST']?>">
+						<img class="logo" src="images/logo-beta.png" alt="Logo" />
+					</a>
 				</div>
 			</div>
 			<div class="center headerShadow"></div>

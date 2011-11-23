@@ -14,10 +14,7 @@
 		$statistics = new Statistics($key);
 		include('include/view/stats.php');
 	} catch (Exception $e) {
-		echo '<div class="info">';
-			echo 'Cannot get data for shortcode:<br/><br/>';
-			echo '<span class="highlight">' . $key . '</span>';
-		echo '</div>';
+		include('include/view/error.php');	
 	}
 	
 	include('include/view/footer.php');
