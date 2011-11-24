@@ -5,7 +5,6 @@ if (INSTALL != 1) {
 	$apache_modules = apache_get_modules();
 	$php_modules = get_loaded_extensions();
 	$flag = true;
-	
 	// Check if mod_rewrite for Apache is installed/enabled
 	if (in_array("mod_rewrite", $apache_modules))
 		echo "mod_rewrite enabled.<br/>";
@@ -21,6 +20,9 @@ if (INSTALL != 1) {
 	// Check if pdo_mysql driver is installed/enabled
 	if (in_array('pdo_mysql', $php_modules)) 
 		echo "pdo_mysql enabled.<br/>";
+	else $flag = false;
+	if (in_array('curl', $php_modules)) 
+		echo "curl enabled.<br/>";
 	else $flag = false;
 	
 	// If some module isn't installed, show a message that installation can't proceed without installing all needed modules.
