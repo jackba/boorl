@@ -37,7 +37,11 @@ try {
 
 } catch (Exception $e) {
 	// Catch exceptions if any arise and show a message
-	echo "Error! " . $e->getMessage();
+	echo '<div class="center info error">';
+		echo "Error! " . $e->getMessage();
+	echo '</div>';
+	$submitted = false;
+	include('include/view/form.php');
 }
 
 	include('include/view/footer.php');

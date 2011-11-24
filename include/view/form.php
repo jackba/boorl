@@ -11,7 +11,7 @@
 		<div class="row center">
 			<div class="rowContainer center">
 				<div class="formElement searchLong">
-					<input class="url" type="text" name="url" id="url" value="" />
+					<input class="url" type="text" name="url" id="url" value="<?php echo $url;?>" />
 				</div>
 				<div class="formElement">
 					<input class="submit" type="submit" value=""/>
@@ -33,10 +33,13 @@
 			</div>
 		</div>
 		<script type="text/javascript">
-			document.getElementById("url").value='<?php echo $url;?>';
 			document.getElementById("short").value='<?php echo $shortCodeURL;?>';
 			document.getElementById("short").select();
 		</script>
-		<?php } ?>
+		<?php } else { ?>
+		<script type="text/javascript">
+			document.getElementById("url").select();
+		</script>	
+		<?php }?>
 	</form>
 </div>

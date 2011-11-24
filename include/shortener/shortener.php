@@ -16,7 +16,7 @@ class Shortener {
 	// Short Code Regular Expression
 	private $keyRegex = "/[^A-Za-z0-9\+\=]/";
 	// URL Regular Expression
-	private $urlRegex = '/^(https?|ftp):\/\/[A-Za-z0-9_\-]+(\.[A-Za-z0-9_\-]+)+(\/|(\/[A-Za-z0-9_\-\?\+\=\&\.\#]+)+)?\/?$/';
+	private $urlRegex = '/^((https?|ftp):\/\/)?[A-Za-z0-9_\-]+(\.[A-Za-z0-9_\-]+)+(\/|(\/[A-Za-z0-9_\-\?\+\=\&\.\#\/\:\%]+)+)?\/?$/';
 
 	// Connect to database on construction
 	public function __construct() {
@@ -61,15 +61,25 @@ class Shortener {
 		if (!preg_match($this->urlRegex, $url)) {
 			throw new Exception('You have entered an invalid URL.');
 		}
+
 		/*
 		 * This is a potential pitfall, since it can be misused
 		 * for attacking a HTTP server (Denial-of-Service)
 		 */
-		// Check if the URL exists
-		if (!get_headers($url)) {
+		// Check if the URL exists using cURL
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_VERBOSE, false);
+		curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+		curl_exec($ch);
+		$code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+		$url = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
+		curl_close($ch);
+		if ($code == 0) {
 			throw new Exception('URL doesn\'t exist.');
 		}
-
+		
 		$url = addslashes($url);
 		$this->database->beginTransaction();
 		// Search for the url in the database

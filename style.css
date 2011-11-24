@@ -170,6 +170,10 @@ div.info
 	font-weight: bold;
 	font-size: 17px;
 }
+div.error
+{
+	color:red;
+}
 .highlight
 {
         font-size: 30px;
