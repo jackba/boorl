@@ -12,7 +12,7 @@ $shortener = new Shortener();
 try {
 
 	$url = urldecode($_REQUEST['url']);
-	
+
 	if (strlen($url) > 0) {
 		// Get domain
 		$domain = $_SERVER['HTTP_HOST'] . "/";
