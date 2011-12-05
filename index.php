@@ -11,8 +11,6 @@ if (INSTALL != 1) {
 include_once("include/config/database.php");
 // URL Shortener Class
 include_once("include/shortener/shortener.php");
-// QR Class
-include_once("include/shortener/qr.php");
 // Instantiate Shortener
 $shortener = new Shortener();
 
