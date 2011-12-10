@@ -57,6 +57,9 @@ class Shortener {
 		// Check if form was submitted and add the URL to the database if it doesn't exist,
 		// otherwise return the shortcode of the long_url
 
+		// Strip whitespace from the beginning and end of a URL
+		$url = trim($url);
+		
 		// Validate entered URL
 		if (!preg_match($this->urlRegex, $url)) {
 			throw new Exception('You have entered an invalid URL.');
