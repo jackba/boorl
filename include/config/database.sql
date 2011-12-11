@@ -1,4 +1,4 @@
-CREATE SCHEMA IF NOT EXISTS `##dbname##` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+CREATE SCHEMA IF NOT EXISTS `##dbname##` DEFAULT CHARACTER SET latin1 COLLATE latin1_general_cs ;
 USE `##dbname##` ;
 
 DROP TABLE IF EXISTS `##dbname##`.`mapping` ;
@@ -12,8 +12,8 @@ CREATE  TABLE IF NOT EXISTS `##dbname##`.`mapping` (
   INDEX `short_code` (`short_code` ASC) ,
   INDEX `long_url` (`long_url`(20) ASC) )
 ENGINE = MyISAM
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_general_ci;
+DEFAULT CHARACTER SET = latin1
+COLLATE = latin1_general_cs;
 
 DROP TABLE IF EXISTS `##dbname##`.`statistics` ;
 
@@ -37,6 +37,6 @@ CREATE  TABLE IF NOT EXISTS `##dbname##`.`statistics` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = MyISAM
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_general_ci;
+DEFAULT CHARACTER SET = latin1
+COLLATE = latin1_general_cs;
 
