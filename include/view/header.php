@@ -6,6 +6,7 @@
 		<meta name="description" content="URL Shortening service">
 		<meta name="author" content="Andrija Vucinic">
 		<link rel="stylesheet" href="style.css">
+		<link rel="shortcut icon" href="images/favicon.ico" />
 	<?php
 	if (strlen(GA_CODE) > 0) { 
 	?>

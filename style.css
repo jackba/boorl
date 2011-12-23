@@ -48,7 +48,7 @@ div.headerShadow
 	background-image:url('images/header-shadow.png');
 	background-repeat:no-repeat;
 	height:40px;
-	width:915px;
+	width:1100px;
 }
 img.logo
 {
@@ -62,7 +62,7 @@ div.footerShadow
 	background-image:url('images/footer-shadow.png');
 	background-repeat:no-repeat;
 	height:112px;
-	width:915px;
+	width:1100px;
 }
 div.footer
 {
