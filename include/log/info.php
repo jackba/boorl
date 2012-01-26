@@ -18,7 +18,9 @@ class Info {
 	private $browser;
 	private $country;
 	private $referer;
-	
+
+	// Country and referer default
+	private $default = "Unknown";
 	/**
 	 * Set all attributes on construction
 	 */
@@ -53,6 +55,9 @@ class Info {
 	private function parseCountry() {
 		$gi = geoip_open("include/GeoIP/GeoIP.dat", GEOIP_STANDARD);
      	$this->country = geoip_country_name_by_addr($gi, $this->ip);
+     	if (strlen($this->country) == 0) {
+     		$this->referer = $this->default;
+     	}
      	geoip_close($gi);
 	}
 	
@@ -67,6 +72,8 @@ class Info {
 				$position = 0;
 			}
 			$this->referer = substr($this->referer, 0, strpos($this->referer, "/", $position));
+		} else {
+			$this->referer = $this->default;
 		}
 	}
 
