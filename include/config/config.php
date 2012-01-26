@@ -5,17 +5,17 @@
 	 */
 
 	// Is BooRL installed, or it's the first time running it
-	define("INSTALL", "##0##");
+	define("INSTALL", "1");
 	// Database host
-  	define("HOST", "##1##");
+  	define("HOST", "localhost");
 	// Database name
-  	define("DATABASE", "##2##");
+  	define("DATABASE", "shortener");
 	// Database username
-  	define("USERNAME", "##3##");
+  	define("USERNAME", "root");
 	// Database password
-	define("PASSWORD", "##4##");
+	define("PASSWORD", "root");
 	// Domain
-	define("DOMAIN", "##5##");
+	define("DOMAIN", "");
 	// Google Analytics Code
-	define("GA_CODE", "##6##");
+	define("GA_CODE", "");
 ?>
