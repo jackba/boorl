@@ -14,10 +14,10 @@ Class Statistics {
 		
 		$database = Database::getInstance();
 		
-		$this->country = $database->query("SELECT country, count(*) as count FROM statistics WHERE mapping_short_code = '" . $this->key . "' GROUP BY country ORDER BY count DESC LIMIT 5")->fetchAll();
-		$this->operatingSystem = $database->query("SELECT operating_system, count(*) as count FROM statistics WHERE mapping_short_code = '" . $this->key . "' GROUP BY operating_system ORDER BY count DESC LIMIT 5")->fetchAll();
-		$this->browser = $database->query("SELECT browser, count(*) as count FROM statistics WHERE mapping_short_code = '" . $this->key . "' GROUP BY browser ORDER BY count DESC LIMIT 5")->fetchAll();
-		$this->referer = $database->query("SELECT referer, count(*) as count FROM statistics WHERE mapping_short_code = '" . $this->key . "' GROUP BY referer ORDER BY count DESC LIMIT 5")->fetchAll();
+		$this->country = $database->query("SELECT country, count(*) FROM statistics WHERE mapping_short_code = '" . $this->key . "' GROUP BY country LIMIT 5")->fetchAll();
+		$this->operatingSystem = $database->query("SELECT operating_system, count(*) FROM statistics WHERE mapping_short_code = '" . $this->key . "' GROUP BY operating_system LIMIT 5")->fetchAll();
+		$this->browser = $database->query("SELECT browser, count(*) FROM statistics WHERE mapping_short_code = '" . $this->key . "' GROUP BY browser LIMIT 5")->fetchAll();
+		$this->referer = $database->query("SELECT referer, count(*) FROM statistics WHERE mapping_short_code = '" . $this->key . "' GROUP BY referer LIMIT 5")->fetchAll();
 		
 		if ($this->country == false || $this->operatingSystem == false || $this->browser == false || $this->referer == false) {
 			throw new Exception("Failed to get database data.");
