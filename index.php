@@ -25,7 +25,7 @@ try {
 	
 	if ($submitted) {
 		// Get domain
-		$domain = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+		$domain = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 		// Create new short code or get old if it already exists
 		$short = $shortener->insertNewURL($url);
 		$shortCodeURL = $domain . $short;

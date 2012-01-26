@@ -57,10 +57,17 @@ class Info {
 	}
 	
 	/**
-	 * Function sets the referer attribute
+	 * Function parses the referer attribute, and extracts the domain
 	 */
 	private function parseReferer() {
 		$this->referer = $_SERVER['HTTP_REFERER'];
+		if (strlen($this->referer) > 0) {
+			$position = strpos($this->referer, "://") + 3;
+			if ($position == false) {
+				$position = 0;
+			}
+			$this->referer = substr($this->referer, 0, strpos($this->referer, "/", $position));
+		}
 	}
 
 	/**
