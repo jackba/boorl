@@ -147,6 +147,7 @@ input.url
 	font-size: 20px;
 	font-weight: bold;
 	width:355px;
+	outline-style:none;
 }
 .submit
 {	
