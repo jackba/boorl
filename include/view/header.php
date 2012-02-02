@@ -34,7 +34,7 @@
 			<div class="header">
 				<div class="center">
 					<a href="http://<?php echo $_SERVER['HTTP_HOST']?>">
-						<img class="logo" src="images/logo-beta.png" alt="Logo" />
+						<img class="logo" src="images/logo.png" alt="Logo" />
 					</a>
 				</div>
 			</div>
