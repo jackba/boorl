@@ -151,18 +151,18 @@ input.url
 }
 .submit
 {	
-	background:url(images/arrow.png) no-repeat left top;
+	background:url(images/arrows.png) no-repeat;
 	width:92px;
 	height:80px;
 	border:none;
 }
 .submit:hover
 {
-	background:url(images/arrow-hover.png) no-repeat left top;
+	background:url(images/arrows.png) -93px 0px no-repeat;
 }
 .submit:active
 {
-	background:url(images/arrow-active.png) no-repeat left top;
+	background:url(images/arrows.png) -186px 0px no-repeat;
 }
 div.info
 {
@@ -185,9 +185,13 @@ div.error
 	width:695px;
 	font-family: 'Webfont';
 }
+.tableContainer div.wrapTwo
+{
+	width:700px;
+}
 .tableContainer div
 {
-	width:320px;
+	width:310px;
 	float:left;
 	margin:1% 2%;
 }

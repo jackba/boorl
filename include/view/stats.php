@@ -21,9 +21,13 @@
 
 <div class="tableContainer center">
 	<?php 
+		echo '<div class="wrapTwo">';
 		showTable($statistics->getBrowsers(), "Browsers");
 		showTable($statistics->getOperatingSystems(), "Operating Systems");
+		echo '</div>';
+		echo '<div class="wrapTwo">';
 		showTable($statistics->getCountries(), "Countries");
 		showTable($statistics->getReferers(), "Referers");
+		echo '</div>';
 	?>
 </div>
