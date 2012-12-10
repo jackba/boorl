@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
 		<meta charset="utf-8">
-		<title>BooRL - The URL Shortener</title>
+		<title>BooRL, The URL Shortener</title>
 		<meta name="description" content="URL Shortening service">
 		<meta name="author" content="Andrija Vucinic">
 		<link rel="stylesheet" href="style.css">
@@ -34,7 +34,7 @@
 			<div class="header">
 				<div class="center">
 					<a href="http://<?php echo $_SERVER['HTTP_HOST']?>">
-						<img class="logo" src="images/logo.png" alt="BooRL - The URL Shortener" />
+						<img class="logo" src="images/logo.png" alt="Logo" />
 					</a>
 				</div>
 			</div>
